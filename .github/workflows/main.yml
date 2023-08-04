@@ -16,8 +16,9 @@ jobs:
           run: |
             curl -V
 #            TOKEN=$(curl -s -X POST -u "sb-d7d48e38-4683-463a-a607-4949e6146ca1!b153390|alm-ts-backend!b1603:0b907e0a-0b16-4130-85b0-db2eea982c4e$IJf4Vk4IBnvrrrpc4hvXn6WYG4NYAaAXofGQig-NbC4=" -d "grant_type=client_credentials&response_type=token" https://96468441trial.authentication.us10.hana.ondemand.com/oauth/token | sed -n '/ *"access_token": *"/ {s///; s/{//g ;s/".*//; p; }')                  
+# TOKEN=$(curl --header "Content-Type: application/x-www-form-urlencoded" --header "Authorization: Basic sb-d7d48e38-4683-463a-a607-4949e6146ca1!b153390|alm-ts-backend!b1603:0b907e0a-0b16-4130-85b0-db2eea982c4e$IJf4Vk4IBnvrrrpc4hvXn6WYG4NYAaAXofGQig-NbC4=" --request POST "response_type=token&grant_type=client_credentials" https://96468441trial.authentication.us10.hana.ondemand.com/oauth/token)
         - name: Token
           run: |        
-           TOKEN=$(curl --header "Content-Type: application/x-www-form-urlencoded" --header "Authorization: Basic sb-d7d48e38-4683-463a-a607-4949e6146ca1!b153390|alm-ts-backend!b1603:0b907e0a-0b16-4130-85b0-db2eea982c4e$IJf4Vk4IBnvrrrpc4hvXn6WYG4NYAaAXofGQig-NbC4=" --request POST "response_type=token&grant_type=client_credentials" https://96468441trial.authentication.us10.hana.ondemand.com/oauth/token)
+           TOKEN=$(curl -s -X POST -u "sb-d7d48e38-4683-463a-a607-4949e6146ca1!b153390|alm-ts-backend!b1603:alm-ts-backend!b1603:0b907e0a-0b16-4130-85b0-db2eea982c4e$IJf4Vk4IBnvrrrpc4hvXn6WYG4NYAaAXofGQig-NbC4=" -d "grant_type=client_credentials&response_type=token" https://96468441trial.authentication.us10.hana.ondemand.com/oauth/token | sed -n '/ *"access_token": *"/ {s///; s/{//g ;s/".*//; p; }')                   
            echo $TOKEN
     
