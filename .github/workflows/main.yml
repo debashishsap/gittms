@@ -29,7 +29,7 @@ jobs:
           run: |        
            TOKEN=$(curl -XPOST -H 'Set-Cookie: Cookie' -H 'Accept: application/json' -u 'sb-21afe38d-ae8b-4d6f-9414-e352853ddf0e!b185374|alm-ts-backend!b1603:73a7dbc1-3dd5-4c67-a2f1-1d234a84f8ba$MFgjO37Ff6mErxiJNowC_k9T52qcUA5BmthRHDkfvNA=' -H 'Content-Type: application/x-www-form-urlencoded' 'https://70f0e8b1trial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials&response_type=token' | sed -n '/ *"access_token": *"/ {s///; s/{//g ;s/".*//; p; }')
            echo $TOKEN
-           BODY=$(curl -s --location --request POST 'https://70f0e8b1trial.authentication.us10.hana.ondemand.com/v2/files/upload' --header "Authorization: Bearer $TOKEN" --form 'file=@${{ github.workspace }}/githcicd_0.0.1.mtar' | awk -F ":" '{print $2}' | grep -Po "\\d+")
+           BODY=$(curl -s --location --request POST 'https://70f0e8b1trial.authentication.us10.hana.ondemand.com/v2/files/upload' --header "Authorization: Bearer $TOKEN" -F 'file=@${{ github.workspace }}/githcicd_0.0.1.mtar' )
            echo $TOKEN
            echo $BODY
     
