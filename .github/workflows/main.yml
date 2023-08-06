@@ -12,18 +12,13 @@ jobs:
           uses: actions/setup-node@v2
           with:
             node-version: 16
-        - name: Fetch action
-          id: pl
-          uses: Rishabh510/Path-lister-action@master
-          with:
-            path: "/"            
-
-        - name: Output results
+        - name: Extract branch name
+          shell: bash
           run: |
-            echo "Found ${{ steps.pl.outputs.path_count }} file(s) with this extension:"
-            for i in ${{ steps.pl.outputs.paths }}; do
-            echo $i
-            done 
+            echo "branch=${GITHUB_HEAD_REF}"
+            echo "${GITHUB_REF#refs/heads/}"
+            echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+          id: extract_branch 
         # - name: CURL
         #   run: |
         #     curl -V
