@@ -20,6 +20,6 @@ jobs:
 # TOKEN=$(curl -s -X POST -u "sb-d7d48e38-4683-463a-a607-4949e6146ca1!b153390|alm-ts-backend!b1603:alm-ts-backend!b1603:0b907e0a-0b16-4130-85b0-db2eea982c4e$IJf4Vk4IBnvrrrpc4hvXn6WYG4NYAaAXofGQig-NbC4=" -d "grant_type=client_credentials&response_type=token" https://96468441trial.authentication.us10.hana.ondemand.com/oauth/token)                   
         - name: Token
           run: |        
-           TOKEN=$(curl -XPOST -H 'Accept: application/json' -H 'Authorization: Basic sb-21afe38d-ae8b-4d6f-9414-e352853ddf0e!b185374|alm-ts-backend!b1603:73a7dbc1-3dd5-4c67-a2f1-1d234a84f8ba$MFgjO37Ff6mErxiJNowC_k9T52qcUA5BmthRHDkfvNA=' -H 'Content-Type: application/x-www-form-urlencoded' 'https://70f0e8b1trial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials&response_type=token')
+           TOKEN=$(curl -XPOST -H 'Accept: application/json' -H 'Authorization: Basic c2ItMjFhZmUzOGQtYWU4Yi00ZDZmLTk0MTQtZTM1Mjg1M2RkZjBlIWIxODUzNzR8YWxtLXRzLWJhY2tlbmQhYjE2MDM6NzNhN2RiYzEtM2RkNS00YzY3LWEyZjEtMWQyMzRhODRmOGJhJE1GZ2pPMzdGZjZtRXJ4aUpOb3dDX2s5VDUycWNVQTVCbXRoUkhEa2Z2TkE9' -H 'Content-Type: application/x-www-form-urlencoded' 'https://70f0e8b1trial.authentication.us10.hana.ondemand.com/oauth/token?grant_type=client_credentials&response_type=token')
            echo $TOKEN
     
