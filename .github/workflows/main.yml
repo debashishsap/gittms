@@ -18,6 +18,7 @@ jobs:
             echo "branch=${GITHUB_HEAD_REF}"
             echo "${GITHUB_REF#refs/heads/}"
             echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+            echo "${env}"
           id: extract_branch 
         # - name: CURL
         #   run: |
