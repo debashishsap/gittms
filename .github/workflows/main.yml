@@ -31,5 +31,5 @@ jobs:
            echo $TOKEN
            fileId=$(curl -s --location --request POST 'https://transport-service-app-backend.ts.cfapps.us10.hana.ondemand.com/v2/files/upload' --header "Authorization: Bearer $TOKEN" -F 'file=@${{ github.workspace }}/githcicd_0.0.1.mtar' | sed -n '/ *"fileId": *"/ {s///; s/{//g ;s/".*//; p; }')
            echo $fileId
-           response=$(curl -s --location --request POST 'https://transport-service-app-backend.ts.cfapps.us10.hana.ondemand.com/v2/nodes/upload' --header "Authorization: Bearer $TOKEN" --data-raw '{ "nodeName": "TMS_DEV", "contentType": "MTA", "storageType": "FILE", "entries": [ { "uri": '"$fileId"' } ], "description": "Upload File", "namedUser": "Debashish" })
-           echo $response
+          # response=$(curl -s --location --request POST 'https://transport-service-app-backend.ts.cfapps.us10.hana.ondemand.com/v2/nodes/upload' --header "Authorization: Bearer $TOKEN" --data-raw '{ "nodeName": "TMS_DEV", "contentType": "MTA", "storageType": "FILE", "entries": [ { "uri": '"$fileId"' } ], "description": "Upload File", "namedUser": "Debashish" })
+          # echo $response
